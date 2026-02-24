@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 
+/* 
 const projects = [
   { name: 'TriangleTrailStatus', path: 'triangle-trail-status' },
   { name: 'SmartPalette', path: 'smart-palette' },
@@ -19,3 +20,4 @@ export const projectRoutes = projects.map(({ name, path }) => {
   const Component = lazy(() => import(`./pages/projects/${name}`))
   return { path, element: <Component /> }
 });
+**/

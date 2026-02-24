@@ -3,6 +3,8 @@
 // Built by Mark Lisanti          //
 // https://github.com/marklasagne //
 
+import './Footer.css';
+
 const Footer = () => {
   return (
     <footer className="footer">

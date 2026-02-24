@@ -1,10 +1,9 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
-import { projectRoutes } from './routes';
-import Footer from './components/Footer';
-import Home from './components/pages/Home';
-import './App.css';
+//import { projectRoutes } from './routes';
+import Home from './pages/Home';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -14,9 +13,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Home />} />
-            {projectRoutes.map(({ path, element }) => (
-              <Route key={path} path={`/projects/${path}`} element={element} />
-            ))}
+
+      
           </Routes>
         </Suspense>
         <Footer />
@@ -26,3 +24,9 @@ function App() {
 }
 
 export default App;
+/**
+ * 
+ *       {projectRoutes.map(({ path, element }) => (
+              <Route key={path} path={`/projects/${path}`} element={element} />
+            ))}
+ */
