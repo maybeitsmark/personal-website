@@ -1,7 +1,7 @@
-// Personal website and portfolio //
-// 2026                           //
-// Built by Mark Lisanti          //
-// https://github.com/marklasagne //
+// Personal website and portfolio  //
+// 2026                            //
+// Built by Mark Lisanti           //
+// https://github.com/maybeitsmark //
 
 import './Footer.css';
 

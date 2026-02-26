@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 //import { projectRoutes } from './routes';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -13,11 +13,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Home />} />
-
-      
           </Routes>
         </Suspense>
-        <Footer />
+       
       </AnimatePresence>
     </Router>
   );

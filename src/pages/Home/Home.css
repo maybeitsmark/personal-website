@@ -1,0 +1,35 @@
+
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+}
+
+.horizontal-container {
+  display: flex;
+  width: 150vw;   
+  height: 100vh;
+}
+
+.panel {
+  width: 50vw;
+  height: 100vh;
+}
+
+.home {
+  background-color:rgb(5, 114, 209);
+}
+
+.portrait {
+  background-color:rgb(126, 39, 148);
+}
+
+.projects {
+  background-color:rgb(39, 148, 101);
+}
+
+.projects-vertical {
+  min-height: 200vh;
+}

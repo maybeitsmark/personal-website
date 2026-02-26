@@ -2,6 +2,7 @@
   transition: all 0.5s ease;
   -webkit-overflow-scrolling: touch;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
