@@ -8,7 +8,26 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
-  plugins: [react(), glsl()],
+  base: process.env.PAGES_BASE_PATH || '/',
+  plugins: [
+    react(),
+    glsl(),
+    {
+      name: 'github-pages-fallback',
+      apply: 'build',
+      generateBundle: {
+        order: 'post',
+        handler(_options, bundle) {
+          // Pages serves this app shell for direct visits to client-side routes.
+          const index = bundle['index.html'];
+          if (!index || index.type !== 'asset') {
+            this.error('Missing index.html for the GitHub Pages fallback');
+          }
+          this.emitFile({ type: 'asset', fileName: '404.html', source: index.source });
+        },
+      },
+    },
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

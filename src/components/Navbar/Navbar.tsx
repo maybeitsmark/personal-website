@@ -9,7 +9,7 @@ import { useAppLayout } from "@/hooks/app_layout.hook";
 import { useIsMobile } from "@/hooks/is_mobile.hook";
 import { useNavigationLock } from "@/hooks/navigation_lock.hook";
 // css
-import "./navbar.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { layout } = useAppLayout();
@@ -60,7 +60,7 @@ const Navbar = () => {
           <div className="mobile-menu">
             <Link to="/" className={`nav-link ${isHome ? "active" : ""}`} onClick={(event) => handleRouteClick(event, "/")}>About</Link>
             <Link to="/projects" className={`nav-link ${isProjects ? "active" : ""}`} onClick={(event) => handleRouteClick(event, "/projects")}>Projects</Link>
-            <a href="/blog" className="nav-link" onClick={closeMenu}>Blog</a>
+            <a href={`${import.meta.env.BASE_URL}blog`} className="nav-link" onClick={closeMenu}>Blog</a>
           </div>
         )}
       </nav>
@@ -71,7 +71,7 @@ const Navbar = () => {
     <nav className={`navbar${isScrolled ? " scrolled" : ""}`}>
       <Link to="/" className={`nav-link ${isHome ? "active" : ""}`} onClick={(event) => handleRouteClick(event, "/")}>About</Link>
       <Link to="/projects" className={`nav-link ${isProjects ? "active" : ""}`} onClick={(event) => handleRouteClick(event, "/projects")}>Projects</Link>
-      <a href="/blog" className="nav-link">Blog</a>
+      <a href={`${import.meta.env.BASE_URL}blog`} className="nav-link">Blog</a>
     </nav>
   );
 };

@@ -13,7 +13,7 @@ import { useAppLayout } from "@/hooks/app_layout.hook";
 import { useMouseScroll } from "@/hooks/mouse_scroll.hook";
 import { useIsMobile } from "@/hooks/is_mobile.hook";
 // styles
-import "./home.css";
+import "./Home.css";
 import "./home_mobile.css";
 
 const Home = () => {

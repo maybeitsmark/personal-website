@@ -8,8 +8,8 @@ import initial_laser_cut_2 from '@/assets/images/BoulderParks/initial_laser_cut_
 import etch from '@/assets/images/BoulderParks/etch.jpg';
 import test_fit from '@/assets/images/BoulderParks/test_fit.jpg';
 import paint from '@/assets/images/BoulderParks/paint.jpg';
-import paint_2 from '@/assets/images/BoulderParks/paint_2.jpg';
-import paint_3 from '@/assets/images/BoulderParks/paint_3.jpg';
+import paint_2 from '@/assets/images/BoulderParks/paint_2.JPG';
+import paint_3 from '@/assets/images/BoulderParks/paint_3.JPG';
 import led_test from '@/assets/images/BoulderParks/led_test.jpg';
 import assembly from '@/assets/images/BoulderParks/assembly.jpg';
 import assembly_2 from '@/assets/images/BoulderParks/assembly_2.jpg';
