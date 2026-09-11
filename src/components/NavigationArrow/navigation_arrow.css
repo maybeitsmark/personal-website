@@ -1,0 +1,49 @@
+.arrow-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 69;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms ease, visibility 0s;
+  right: var(--content-right);
+  bottom: max(var(--content-gutter), env(safe-area-inset-bottom));
+}
+
+.page-arrow {
+  cursor: pointer;
+  width: 6rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.page-arrow.left {
+  transform: rotate(-90deg);
+}
+
+.page-arrow.right {
+  transform: rotate(90deg);
+}
+
+.page-arrow.up {
+  transform: rotate(0deg);
+}
+
+.page-arrow:hover {
+  opacity: 0.75;
+}
+
+.arrow-container.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease, visibility 0s 250ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-container, .arrow-container.is-hidden { transition: none; }
+}

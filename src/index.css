@@ -1,20 +1,44 @@
-* {
-  transition: all 0.5s ease;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-  scroll-behavior: smooth;
+html {
+  --navbar-height: 50px;
+  --content-gutter: 0.5rem;
+  --content-left: max(var(--content-gutter), env(safe-area-inset-left));
+  --content-right: max(var(--content-gutter), env(safe-area-inset-right));
+  --bottom-clearance: calc(7rem + env(safe-area-inset-bottom));
+  height: 100%;
+  scrollbar-gutter: stable;
+  overflow-x: clip;
 }
 
 body {
-  overflow-x: hidden;
+  overflow: visible;
+  position: relative;
 }
 
-h1 {
-  font-size: 1.5rem;
-  margin: 0 1rem 1rem;
+html[data-transitioning="true"] .horizontal-section {
+  pointer-events: none;
 }
 
-p {
-  font-size: 1.125rem;
-  margin: 0 1rem 0;
+@media (max-width: 1023px), (max-height: 699px) {
+  html { --navbar-height: calc(60px + env(safe-area-inset-top)); }
+}
+
+html, body {
+  margin: 0;
+  font-family: Verdana;
+}
+
+@font-face {
+  font-family: "Mainframe";
+  src: url("./assets/fonts/mainframe.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/roboto.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

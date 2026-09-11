@@ -1,7 +1,8 @@
 .footer {
-  bottom: 0;
   width: 100%;
   opacity: 0.5;
-  height: 2.5rem;
+  min-height: 2.5rem;
+  padding: 1rem 0;
   text-align: center;
+  display: flow-root;
 }

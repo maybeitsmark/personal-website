@@ -1,30 +1,52 @@
-import { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
-import { AnimatePresence } from 'framer-motion';
-//import { projectRoutes } from './routes';
-import Home from './pages/Home/Home';
-import Footer from './components/Footer/Footer';
+// Sets up router for Home, Projects list/detail views with shared canvas overlays and navigation components
+// https://github.com/maybeitsmark 
+// 2026
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+// pages
+import Home from "@/pages/Home/Home";
+import ProjectRoute from "@/pages/Projects/ProjectRoute";
+// components 
+import Navbar from "@/components/Navbar/Navbar";
+import CompositionCanvas from "@/components/Portrait/CompositionCanvas";
+import BackgroundCanvas from "@/components/Background/BackgroundCanvas";
+import NavigationArrow from "@/components/NavigationArrow/NavigationArrow";
+import Footer from "@/components/Footer/Footer";
+// hooks
+import { useAppLayout } from "@/hooks/app_layout.hook";
+import { useIsMobile } from "@/hooks/is_mobile.hook";
+import { useScrollLock } from "@/hooks/scroll_lock.hook";
+
+const AppContent = () => {
+  const { layout } = useAppLayout();
+  const { isMobile } = useIsMobile();
+
+  // Keep the document policy route-driven so direct project URLs can scroll.
+  useScrollLock(layout, isMobile);
+
+  return (
+    <>
+      <Navbar />
+      <BackgroundCanvas />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/projects" element={<Home />} />
+        <Route path="/projects/:slug" element={<ProjectRoute />} />
+      </Routes>
+      <CompositionCanvas />
+      <NavigationArrow />
+      {(isMobile || layout !== "home") && <Footer />}
+    </>
+  );
+};
+
+const App = () => {
   return (
     <Router>
-      <AnimatePresence>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Home />} />
-          </Routes>
-        </Suspense>
-       
-      </AnimatePresence>
+      <AppContent />
     </Router>
   );
-}
+};
 
 export default App;
-/**
- * 
- *       {projectRoutes.map(({ path, element }) => (
-              <Route key={path} path={`/projects/${path}`} element={element} />
-            ))}
- */

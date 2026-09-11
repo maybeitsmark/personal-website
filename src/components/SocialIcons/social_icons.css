@@ -1,0 +1,20 @@
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+}
+
+.icon {
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.75;
+  }
+}

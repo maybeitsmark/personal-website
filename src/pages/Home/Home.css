@@ -1,35 +1,82 @@
-
-#smooth-wrapper {
-  overflow: hidden;
+.horizontal-section,
+.horizontal-section-mobile {
+  --content-gutter: 1rem;
+  --content-left: max(var(--content-gutter), env(safe-area-inset-left));
+  --content-right: max(var(--content-gutter), env(safe-area-inset-right));
 }
 
-#smooth-content {
-  overflow: visible;
+.horizontal-section {
+  padding-top: var(--navbar-height);
 }
 
-.horizontal-container {
+.panels {
   display: flex;
-  width: 150vw;   
-  height: 100vh;
+  align-items: flex-start;
+  /* The animation moves one third of this track: one half-screen panel. */
+  width: 150%;
 }
 
 .panel {
-  width: 50vw;
-  height: 100vh;
+  flex: 0 0 calc(100% / 3);
+  min-width: 0;
+  height: calc(100dvh - var(--navbar-height));
+  box-sizing: border-box;
+  padding: var(--content-gutter) var(--content-right) var(--content-gutter) var(--content-left);
 }
 
 .home {
-  background-color:rgb(5, 114, 209);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.about-panel {
+  width: 100%;
+}
+
+.about-panel h1 { margin: 0 0 0.5rem; }
+.about-panel h4 { margin: 0 0 0.5rem; }
+.about-panel p { margin: 0.5rem 0; line-height: 1.45; }
 
 .portrait {
-  background-color:rgb(126, 39, 148);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: sticky;
+  top: var(--navbar-height);
 }
 
-.projects {
-  background-color:rgb(39, 148, 101);
+.panel.projects {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  min-height: calc(100dvh - var(--navbar-height));
+  padding-bottom: var(--bottom-clearance);
 }
 
-.projects-vertical {
-  min-height: 200vh;
+.layout-home {
+  height: 100dvh;
+  box-sizing: border-box;
+  overflow: clip;
+}
+
+.lyrics {
+  width: min(300px, 90%);
+  opacity: 10%;
+  z-index: -1;
+}
+
+@media (min-width: 1024px) and (min-height: 700px) and (max-height: 850px),
+       (min-width: 1024px) and (max-width: 1199px) and (min-height: 700px) and (max-height: 1000px) {
+  .about-panel h1 { margin-bottom: 0.5rem; }
+  .about-panel h4 { margin-bottom: 0.5rem; }
+  .about-panel p { margin: 0.5rem 0; }
+  .about-panel .form-container { margin-top: 0.5rem; }
+  .about-panel .input,
+  .about-panel .text-area { margin-top: 0.5rem; line-height: 1.4rem; }
+  .about-panel .text-area { height: 6rem; }
+  .about-panel .button { height: 2.75rem; }
 }

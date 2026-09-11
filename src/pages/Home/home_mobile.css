@@ -1,0 +1,18 @@
+.horizontal-section-mobile {
+  padding: var(--navbar-height) var(--content-right) 0 var(--content-left);
+}
+.panels-mobile { display: block; }
+.panel-mobile {
+  width: 100%;
+  box-sizing: border-box;
+  scroll-margin-top: var(--navbar-height);
+}
+.panel-mobile.home {
+  min-height: calc(100dvh - var(--navbar-height));
+  padding: var(--content-gutter) 0;
+}
+.panel-mobile.projects {
+  display: flex;
+  justify-content: center;
+  padding: var(--content-gutter) 0 var(--bottom-clearance);
+}

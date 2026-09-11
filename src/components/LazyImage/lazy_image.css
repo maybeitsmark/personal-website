@@ -1,0 +1,81 @@
+.lazy-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lazy-image.is-loading {
+  min-height: 120px;
+  aspect-ratio: var(--image-aspect-ratio, 16 / 9);
+}
+
+.lazy-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.lazy-image.is-loaded {
+  overflow: visible;
+  background: transparent;
+}
+
+.lazy-image.is-loaded img {
+  opacity: 1;
+}
+
+.grid-item-image-frame {
+  margin-top: 8px;
+}
+
+.grid-item-image-frame.is-loading {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.image-loading-indicator {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.grid-item:has(.is-loading) .grid-item-text {
+  opacity: 0;
+}
+
+.grid-item-image-frame .grid-item-image {
+  margin-top: 0;
+}
+
+.project-image-placeholder img {
+  width: auto;
+  max-width: 100%;
+}
+
+.project-slideshow-image-placeholder {
+  width: 75%;
+  max-height: 500px;
+  margin: 3rem auto;
+}
+
+.project-slideshow-image-placeholder .project-swiper-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-image img {
+    transition: none;
+  }
+}

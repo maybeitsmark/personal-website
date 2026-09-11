@@ -1,43 +1,14 @@
-import { useRef, useEffect, useState, forwardRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+// Renders an adjustable directional light source for scene key lighting
+// https://github.com/maybeitsmark 
+// 2026
 
-const KeyLight = forwardRef(({ brightness, color }, ref) => {
+import { useRef, forwardRef } from 'react';
+
+const KeyLight = forwardRef((/** @type {{ brightness?: number, color?: string }} */ { brightness = 3.4, color = "#ffecec" }, ref) => {
   const keyLightRef = useRef();
-  const [scrollX, setScrollX] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const normalizedScrollX = window.scrollX / (document.body.scrollWidth - window.innerWidth);
-      setScrollX(normalizedScrollX);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    keyLightRef.current.position.set(-3, 0, 5);
-  }, []);
-
-  useFrame(() => {
-    keyLightRef.current.position.x = -3 + scrollX * 6;
-  });
 
   return (
-    <directionalLight
-      castShadow  
-      width={5}
-      height={5}
-      color={color}
-      intensity={brightness}
-      ref={(light) => {
-        keyLightRef.current = light;
-        if (ref) { ref.current = light; }
-      }}
-    />
+    <directionalLight castShadow  width={5} height={5} color={color} intensity={brightness} ref={(light) => { keyLightRef.current = light; if (ref) { ref.current = light; }}} />
   );
 });
 
