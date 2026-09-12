@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
-  base: process.env.PAGES_BASE_PATH || '/',
+  base: '/',
   plugins: [
     react(),
     glsl(),
