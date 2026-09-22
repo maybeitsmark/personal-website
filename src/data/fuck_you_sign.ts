@@ -1,6 +1,4 @@
 // Fuck You Sign Data
-// https://github.com/maybeitsmark 
-// 2026
 
 import banner from '@/assets/images/FuckYouSign/banner.jpg';
 import fuck_you_sign from '@/assets/images/FuckYouSign/fuck_you_sign.png';

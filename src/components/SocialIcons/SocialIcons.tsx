@@ -1,6 +1,4 @@
 // Displays social media link icons in an accessible list
-// https://github.com/maybeitsmark 
-// 2026
 
 // assets
 import linkedin from "@/assets/icons/linkedin.svg";

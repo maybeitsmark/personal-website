@@ -1,6 +1,4 @@
 // Job Zen Data
-// https://github.com/maybeitsmark 
-// 2026
 
 import jobzen_thumbnail from '@/assets/images/Jobzen/jobzen_thumbnail.png';
 import hero_image from '@/assets/images/Jobzen/hero_image.jpg';

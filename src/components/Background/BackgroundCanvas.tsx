@@ -1,6 +1,4 @@
 // Reactive WebGL background canvas for specific project - dynamically applies theme colors and intensity from project data or defaults via ShaderPlane component
-// Personal website and portfolio 
-// Mark Lisanti - 2026
 
 import { Canvas } from "@react-three/fiber";
 import ShaderPlane from "./ShaderPlane";

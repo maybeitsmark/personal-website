@@ -1,3 +1,4 @@
+
 import { useLayoutEffect, useRef } from "react";
 import { useThree } from "@react-three/fiber";
 import gsap from "gsap";
@@ -58,17 +59,11 @@ export const useSceneRigAnimation = ({ sceneRefs, layout, isMobile = false, read
     const viewYaw = Math.atan2(cameraX, cameraZ);
     // Preserve the existing three-quarter pose while centering at 25% / 75%
     // of the canvas at every aspect ratio.
-    const rotation = new THREE.Euler(
-      small ? 0.25 : 0,
-      small ? 0.75 : limitPortraitBaseYaw(Math.atan2(layout === "home" ? -2.125 : 2.125, cameraZ) * 1.25, viewYaw),
-      0,
-    );
+    const rotation = new THREE.Euler(small ? 0.25 : 0, small ? 0.75 : limitPortraitBaseYaw(Math.atan2(layout === "home" ? -2.125 : 2.125, cameraZ) * 1.25, viewYaw), 0);
     const posedBounds = bounds.current!.clone().applyMatrix4(new THREE.Matrix4().makeRotationFromEuler(rotation));
     const size = posedBounds.getSize(new THREE.Vector3());
     const center = posedBounds.getCenter(new THREE.Vector3());
-    const scale = small
-      ? 75 / (size.y * pixelsPerUnit)
-      : Math.min(1, (height - navbarHeight) * 0.82 / (size.y * pixelsPerUnit), width * 0.4 / (size.x * pixelsPerUnit));
+    const scale = small ? 75 / (size.y * pixelsPerUnit) : Math.min(1, (height - navbarHeight) * 0.82 / (size.y * pixelsPerUnit), width * 0.4 / (size.x * pixelsPerUnit));
     const cameraY = small ? 0 : navbarHeight / (2 * pixelsPerUnit);
     const modelX = -center.x * scale + (small ? -worldWidth / 2 + 8 / pixelsPerUnit + size.x * scale / 2 : 0);
     const modelY = -center.y * scale + (small ? worldHeight / 2 - 8 / pixelsPerUnit - size.y * scale / 2 : 0);
@@ -85,8 +80,7 @@ export const useSceneRigAnimation = ({ sceneRefs, layout, isMobile = false, read
     const complete = joinHorizontalTransition();
     // Initial placement and ordinary resizing are immediate. In particular,
     // Strict Mode must never replay a tween from an unpositioned camera/model.
-    const animate = previous.current !== null &&
-      (previous.current.layout !== layout || previous.current.isMobile !== isMobile);
+    const animate = previous.current !== null && (previous.current.layout !== layout || previous.current.isMobile !== isMobile);
     const timeline = gsap.timeline({ onComplete: complete });
     targets.forEach(([target, values]) => {
       gsap.killTweensOf(target);
@@ -96,12 +90,7 @@ export const useSceneRigAnimation = ({ sceneRefs, layout, isMobile = false, read
     model.visible = true;
     cam.updateMatrixWorld();
     model.updateWorldMatrix(true, true);
-    const reveal = gsap.to(sceneRefs.container.current, {
-      opacity: 1,
-      duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.4,
-      ease: "power2.out",
-      overwrite: true,
-    });
+    const reveal = gsap.to(sceneRefs.container.current, { opacity: 1, duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.4, ease: "power2.out", overwrite: true });
     if (!animate) complete();
     previous.current = { layout, isMobile };
     return () => {

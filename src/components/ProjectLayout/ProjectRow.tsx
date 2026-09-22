@@ -1,6 +1,4 @@
 // Manages scroll triggered fade up animations for individual project content rows
-// https://github.com/maybeitsmark 
-// 2026
 
 import { ReactNode, useRef } from 'react';
 // hooks

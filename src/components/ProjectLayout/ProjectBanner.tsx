@@ -1,6 +1,4 @@
 // Renders an image banner section for project pages using ProjectRow
-// https://github.com/maybeitsmark 
-// 2026
 
 import ProjectRow from './ProjectRow';
 import LazyImage from '@/components/LazyImage/LazyImage';

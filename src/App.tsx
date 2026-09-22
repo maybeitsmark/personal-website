@@ -1,6 +1,4 @@
 // Sets up router for Home, Projects list/detail views with shared canvas overlays and navigation components
-// https://github.com/maybeitsmark 
-// 2026
 
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 // pages
@@ -21,7 +19,7 @@ const AppContent = () => {
   const { layout } = useAppLayout();
   const { isMobile } = useIsMobile();
 
-  // Keep the document policy route-driven so direct project URLs can scroll.
+  // Keep the document policy route driven so direct project URLs can scroll
   useScrollLock(layout, isMobile);
 
   return (

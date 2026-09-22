@@ -1,3 +1,5 @@
+// Displays images with a loading placeholder, optional visibility-based loading, and a fade-in.
+
 import { useEffect, useRef, useState, type ImgHTMLAttributes, type SyntheticEvent } from 'react';
 import './lazy_image.css';
 
@@ -7,19 +9,9 @@ interface LazyImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'
   eager?: boolean;
   wrapperClassName?: string;
   deferUntilVisible?: boolean;
-}
+};
 
-const LazyImage = ({
-  src,
-  alt,
-  eager = false,
-  deferUntilVisible = false,
-  wrapperClassName = '',
-  className = '',
-  onLoad,
-  onError,
-  ...imageProps
-}: LazyImageProps) => {
+const LazyImage = ({ src, alt, eager = false, deferUntilVisible = false, wrapperClassName = '', className = '', onLoad, onError, ...imageProps }: LazyImageProps) => {
   const wrapperRef = useRef<HTMLSpanElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [nearViewport, setNearViewport] = useState(false);
@@ -60,28 +52,13 @@ const LazyImage = ({
   };
 
   return (
-    <span
-      ref={wrapperRef}
-      className={`lazy-image ${wrapperClassName} ${isLoaded ? 'is-loaded' : 'is-loading'}`}
-      aria-busy={!isLoaded}
-    >
+    <span ref={wrapperRef} className={`lazy-image ${wrapperClassName} ${isLoaded ? 'is-loaded' : 'is-loading'}`} aria-busy={!isLoaded}>
       {!isLoaded && (
         <span className="image-loading-indicator" role="status" aria-label={alt ? `Loading media: ${alt}` : 'Loading media'}>
           <span aria-hidden="true">ˡᴼᴬᵈᴵᴺᴳ ᵐᴱᴰᴵᴬ</span>
         </span>
       )}
-      {shouldLoad && <img
-        ref={imageRef}
-        {...imageProps}
-        src={src}
-        alt={alt}
-        className={className}
-        loading={eager ? 'eager' : 'lazy'}
-        decoding="async"
-        fetchPriority={eager ? 'high' : 'auto'}
-        onLoad={handleLoad}
-        onError={handleError}
-      />}
+      {shouldLoad && <img ref={imageRef} {...imageProps} src={src} alt={alt} className={className} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchPriority={eager ? 'high' : 'auto'} onLoad={handleLoad} onError={handleError}/>}
     </span>
   );
 };

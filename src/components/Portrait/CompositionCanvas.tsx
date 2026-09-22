@@ -1,6 +1,4 @@
 // Wraps the React Three Fiber canvas for the portrait scene, setting up refs and performance settings
-// https://github.com/maybeitsmark 
-// 2026
 
 import { createRef, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";

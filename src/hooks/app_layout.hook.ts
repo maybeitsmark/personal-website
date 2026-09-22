@@ -1,6 +1,4 @@
 // Parses current URL path to determine application section (home/projects/project-detail) and extracts active project slug
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useMemo } from "react";
 import { useLocation } from "react-router";

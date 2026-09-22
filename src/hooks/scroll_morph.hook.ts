@@ -1,10 +1,11 @@
+
 import { useEffect, RefObject } from "react";
 import { transitionLock } from "@/utils/transition_lock.util";
 
 interface ProjectScrollMorphProps {
   morphsRef: RefObject<any>;
   isProjectsRoute: boolean;
-}
+};
 
 // An underdamped spring gives the melt a short rebound in either direction.
 const STIFFNESS = 220;

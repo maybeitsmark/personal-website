@@ -1,6 +1,4 @@
 // Boulder Parks Data
-// https://github.com/maybeitsmark 
-// 2026     
           
 import boulder_parks from '@/assets/images/BoulderParks/boulder_parks.jpg';
 import initial_laser_cut from '@/assets/images/BoulderParks/initial_laser_cut.jpg';

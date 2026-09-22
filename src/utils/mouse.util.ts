@@ -1,6 +1,4 @@
 // Maintains normalized (-1 to 1) x/y coordinates for Three.js camera look-at behavior during pointer event
-// https://github.com/maybeitsmark 
-// 2026
 
 import * as THREE from "three";
 

@@ -1,6 +1,4 @@
 // Spotify Rewards Study Data
-// https://github.com/maybeitsmark 
-// 2026     
 
 import title from '@/assets/images/SpotifyRewards/title.png';
 import background from '@/assets/images/SpotifyRewards/background.png';

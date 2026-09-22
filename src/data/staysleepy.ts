@@ -1,6 +1,4 @@
 // stay sleepy data
-// https://github.com/maybeitsmark 
-// 2026   
 
 import main_door from '@/assets/images/StaySleepy/main_door.png';
 

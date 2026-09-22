@@ -1,6 +1,4 @@
 // Renders an image slideshow component for project pages using Swiper
-// https://github.com/maybeitsmark 
-// 2026
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -27,12 +25,7 @@ const ProjectSlideshow = ({ section }: Props) => {
         <Swiper pagination={{ type: 'fraction' }} navigation modules={[Pagination, Navigation]} className="project-swiper">
           {section.images.map((image, index) => (
             <SwiperSlide key={index} className="project-swiper-slide">
-              <LazyImage
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="project-swiper-image"
-                wrapperClassName="project-slideshow-image-placeholder"
-              />
+              <LazyImage src={image} alt={`Slide ${index + 1}`} className="project-swiper-image" wrapperClassName="project-slideshow-image-placeholder" />
             </SwiperSlide>
           ))}
         </Swiper>

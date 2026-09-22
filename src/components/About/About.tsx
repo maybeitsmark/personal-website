@@ -1,7 +1,3 @@
-// Represents the About section of the website
-// Includes a brief introduction and contact information
-// Personal website and portfolio 
-// Mark Lisanti - 2026   
 
 const About = () => {
   const about = `I'm a creative developer and artist who loves building interactive experiences that combine code, design, and a bit of experimentation.

@@ -1,6 +1,4 @@
 // Animates morphing assets based on navigation direction between home and projects sections
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

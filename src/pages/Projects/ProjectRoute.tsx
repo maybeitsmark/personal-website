@@ -1,6 +1,4 @@
 // Loads project details by slug, handles scroll locking for detail view, and renders fallback if not found
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useEffect } from "react";
 import { useParams } from "react-router";

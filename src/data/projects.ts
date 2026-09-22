@@ -1,6 +1,4 @@
 // Aggregates individual project data modules into a single lookup object and derives corresponding card metadata for rendering
-// https://github.com/maybeitsmark 
-// 2026
 
 import { NihilismData } from "./nihilism";
 import { BoulderParksData } from "./boulder_parks";

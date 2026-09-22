@@ -1,6 +1,4 @@
 // Renders an interactive tag filter button that toggles active states to refine project lists
-// https://github.com/maybeitsmark 
-// 2026
 
 // styles
 import './project_grid.css';

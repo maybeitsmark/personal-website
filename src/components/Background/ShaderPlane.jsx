@@ -1,7 +1,5 @@
 // A shader plane component that renders dynamic background effects
 // Handles touch and mouse interactions for trail rendering and color transitions
-// Personal website and portfolio 
-// Mark Lisanti - 2026
 
 import { useMemo, useRef, useEffect, useCallback } from "react";
 import { useFrame, useThree } from "@react-three/fiber";

@@ -1,6 +1,4 @@
-// Redirects top-of-page wheel/touch gestures between home and projects without leaking native scroll
-// https://github.com/maybeitsmark
-// 2026
+// Redirects top of page wheel/touch gestures between home and projects without leaking native scroll
 
 import { useEffect, useRef } from "react";
 // hooks
@@ -39,11 +37,7 @@ export const useMouseScroll = ( { layout, isMobile }: MouseScrollProps ) => {
     const onWheel = (event: WheelEvent) => {
       if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
       if ((event.target as HTMLElement).closest("input, textarea, select")) return;
-      const deltaY = event.deltaMode === WheelEvent.DOM_DELTA_LINE
-        ? event.deltaY * 16
-        : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-          ? event.deltaY * window.innerHeight
-          : event.deltaY;
+      const deltaY = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? event.deltaY * 16 : event.deltaMode === WheelEvent.DOM_DELTA_PAGE ? event.deltaY * window.innerHeight : event.deltaY;
 
       if (transitionLock.current) {
         event.preventDefault();

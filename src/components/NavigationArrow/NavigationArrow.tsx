@@ -1,6 +1,4 @@
 // Handles scroll to top and navigation between Home, Projects list, and Project detail pages. 
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";

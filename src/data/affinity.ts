@@ -1,6 +1,4 @@
 // Affinity Data
-// https://github.com/maybeitsmark 
-// 2026
 
 import affinity from '@/assets/images/Affinity/affinity.png';
 import logo from '@/assets/images/Affinity/logo.png';
@@ -123,8 +121,7 @@ export const AffinityData: any = {
     {
       id: "conclusion-text",
       type: "text",
-      content:
-        "Affinity explored how physiological data can strengthen our awareness of ourselves and others within digital environments. I am grateful for the things I learned while working on this project and for the collaboration with my team.",
+      content: "Affinity explored how physiological data can strengthen our awareness of ourselves and others within digital environments. I am grateful for the things I learned while working on this project and for the collaboration with my team.",
     },
   ],
 };

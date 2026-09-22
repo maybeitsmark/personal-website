@@ -1,6 +1,4 @@
 // Renders a responsive Masonry grid of project cards, supporting category filtering via tags
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useMemo, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
@@ -23,7 +21,6 @@ const ProjectGrid = () => {
     if (filterList.length === 0) {
       return projectCards;
     }
-
     return projectCards.filter((project) =>
       project.tags.some((tag: string) => filterList.includes(tag))
     );

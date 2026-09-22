@@ -1,6 +1,4 @@
 // Renders the footer component for the application
-// https://github.com/maybeitsmark 
-// 2026
 
 import './Footer.css';
 

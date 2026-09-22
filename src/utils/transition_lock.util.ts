@@ -66,11 +66,5 @@ export const navigateFromTop = (destination: "home" | "projects", navigate: () =
   transitionLock.phase = "top";
   document.documentElement.dataset.transitioning = "true";
   const position = { y: window.scrollY };
-  scrollTween = gsap.to(position, {
-    y: 0,
-    duration: Math.min(1, Math.max(0.35, window.scrollY / 2500)),
-    ease: "power2.inOut",
-    onUpdate: () => window.scrollTo(0, position.y),
-    onComplete: startHorizontal,
-  });
+  scrollTween = gsap.to(position, { y: 0, duration: Math.min(1, Math.max(0.35, window.scrollY / 2500)), ease: "power2.inOut", onUpdate: () => window.scrollTo(0, position.y), onComplete: startHorizontal});
 };

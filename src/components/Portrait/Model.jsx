@@ -1,6 +1,4 @@
 // Loads and animates portfolio model scene, handling eye tracking and morph target management
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";

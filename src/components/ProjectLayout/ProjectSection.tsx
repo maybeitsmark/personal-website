@@ -1,6 +1,4 @@
 // Renders specific project layout sections (image, text, video) based on their type
-// https://github.com/maybeitsmark 
-// 2026
 
 import { lazy, Suspense, type ReactNode } from 'react';
 // types

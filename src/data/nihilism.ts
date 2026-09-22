@@ -1,6 +1,4 @@
 // Nihilism Data
-// https://github.com/maybeitsmark 
-// 2026
 
 import nihilism from '@/assets/images/Nihilism/nihilism.png';
 import nihilism_hero from '@/assets/images/Nihilism/nihilism_hero.png';

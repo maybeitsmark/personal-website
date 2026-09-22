@@ -1,3 +1,4 @@
+
 import { RefObject, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { beginHorizontalTransition, finishHorizontalTransition, joinHorizontalTransition, TRANSITION_DURATION } from "@/utils/transition_lock.util";
@@ -6,7 +7,7 @@ interface PanelsAnimationProps {
   panelsRef: RefObject<HTMLDivElement | null>;
   layout: string;
   isMobile: boolean;
-}
+};
 
 export const usePanelsAnimation = ({ panelsRef, layout, isMobile }: PanelsAnimationProps) => {
   const previous = useRef<{ index: number; mobile: boolean } | null>(null);

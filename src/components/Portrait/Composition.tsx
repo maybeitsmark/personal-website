@@ -1,6 +1,4 @@
 // Manages React Three Fiber scene composition, integrating scroll based morphs, rig animations, and lighting effects
-// https://github.com/maybeitsmark 
-// 2026
 
 // hooks
 import { useCallback, useState } from "react";

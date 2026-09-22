@@ -1,6 +1,4 @@
 // Renders home screen with About/Contact content and Project Grid, managing scroll locking during transitions
-// https://github.com/maybeitsmark 
-// 2026
 
 import { useLayoutEffect, useRef } from "react";
 // components

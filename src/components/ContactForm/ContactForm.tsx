@@ -1,6 +1,4 @@
 // Renders an interactive email form using EmailJS for backendless message sending
-// Personal website and portfolio 
-// Mark Lisanti - 2026
 
 import  { useState, useRef, SubmitEvent  } from 'react';
 import emailjs from '@emailjs/browser';

@@ -1,6 +1,4 @@
 // Hang 10 Data
-// https://github.com/maybeitsmark 
-// 2026
 
 import showcase from '@/assets/images/Hang10/showcase.png';
 

@@ -1,6 +1,4 @@
 // Regen Card Data
-// https://github.com/maybeitsmark 
-// 2026   
 
 import account from '@/assets/images/RegenCard/account.png';
 import card_tap_animation from '@/assets/images/RegenCard/card_tap_animation.gif';

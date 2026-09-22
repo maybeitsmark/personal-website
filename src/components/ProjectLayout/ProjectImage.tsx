@@ -1,6 +1,4 @@
 // Renders an image section for project pages using ProjectRow wrapper
-// https://github.com/maybeitsmark 
-// 2026
 
 import ProjectRow from './ProjectRow';
 import LazyImage from '@/components/LazyImage/LazyImage';
@@ -18,12 +16,7 @@ const ProjectImage = ({ section, eager = false }: Props) => {
   return (
     <ProjectRow>
       <div className="project-image">
-        <LazyImage
-          src={section.src}
-          alt={section.alt ?? ''}
-          eager={eager}
-          wrapperClassName="project-image-placeholder"
-        />
+        <LazyImage src={section.src} alt={section.alt ?? ''} eager={eager} wrapperClassName="project-image-placeholder" />
       </div>
     </ProjectRow>
   );
