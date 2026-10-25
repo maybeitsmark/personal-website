@@ -58,17 +58,13 @@
   top: 0;
   left: 0;
   width: 100%;
-
   height: calc(60px + env(safe-area-inset-top));
-
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   padding-top: env(safe-area-inset-top);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-
   box-sizing: border-box;
   z-index: 100;
 }
