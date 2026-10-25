@@ -5,7 +5,7 @@ import linkedin from "@/assets/icons/linkedin.png";
 import github from "@/assets/icons/github.svg";
 import codepen from "@/assets/icons/codepen.svg";
 import instagram from "@/assets/icons/instagram.png";
-import medium from "@/assets/icons/medium.svg";
+import medium from "@/assets/icons/medium.png";
 import spotify from "@/assets/icons/spotify.png";
 // styles
 import "./social_icons.css";
